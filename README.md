@@ -1,0 +1,3 @@
+# Tracedate
+
+Tracedate aims to helps the user rename their media files based on their creation date. A media file is defined here as essentially any digital file that contains a photo or a video. The timestamp is extracted from the file, either from the EXIF metadata or the filename, and the media file is renamed based on it. Say goodbye to cryptic names and organize camera and mic files in chronological order.
