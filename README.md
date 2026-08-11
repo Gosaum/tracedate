@@ -16,7 +16,7 @@ Tracedate aims to helps the user rename their media files based on their creatio
 
 2. **Run the container:**
    ```bash
-   docker run --rm -it -v <target_directory_path>:/data tracedate -d /data
+   docker run --rm -it -v <target_directory_path>:/data tracedate /data
 
 ## Running the script locally with Python
 
@@ -31,4 +31,4 @@ Tracedate aims to helps the user rename their media files based on their creatio
 
 2. **Run the script:**
    ```bash
-   python main.py -d <target_directory_path>
+   python main.py <target_directory_path>
