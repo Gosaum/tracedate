@@ -7,7 +7,7 @@ class GenerationMode(enum.Enum):
     Paddedint = enum.auto()
     Parensint = enum.auto()
     Hexstring = enum.auto()
-    
+
 class FileNamer:
 
     def __init__(self, media_dir_path:str):

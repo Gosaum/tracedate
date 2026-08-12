@@ -19,7 +19,7 @@ def run(target:str):
 
     mediafinder_service = MediaFinder(
         media_dir_path=target,
-        media_extensions={ '.png', '.jpg', '.jpeg', '.webp', '.mov', '.mp4'}
+        media_extensions={ '.jpeg', '.jpg', '.png', '.webp', '.mov', '.mp4'}
     )
     datereader_service = DateReader()
     filenamer_service = FileNamer(media_dir_path=target)
