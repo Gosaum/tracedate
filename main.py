@@ -1,4 +1,5 @@
 import argparse
+import datetime
 import os
 
 from services.datereader import DateReader
@@ -24,21 +25,28 @@ def run(target:str):
     datereader_service = DateReader()
     filenamer_service = FileNamer(media_dir_path=target)
 
-    media_by_date = {None: []}
+    media_by_date = {}
+    media_times = {}
 
     for media_path in mediafinder_service.iter_media():
 
         filename_date = datereader_service.read_from_filename(file_path=media_path)
-        metadata_date = datereader_service.read_from_metadata(file_path=media_path)
+        metadata_datetime = datereader_service.read_from_metadata(file_path=media_path)
 
-        file_date = metadata_date or filename_date or None
+        file_datetime = metadata_datetime or filename_date or None
 
-        if filename_date and metadata_date and filename_date != metadata_date:
-            file_date = min(metadata_date, filename_date)
+        if filename_date and metadata_datetime and filename_date != metadata_datetime:
+            file_datetime = min(metadata_datetime, filename_date)
+
+        file_date = file_datetime.date() if file_datetime else None
+        file_time = metadata_datetime.time() if metadata_datetime else None
 
         media_by_date.setdefault(file_date, []).append(media_path)
+        media_times[media_path] = file_time
 
     for date, media in media_by_date.items():
+
+        media.sort(key=lambda path: (media_times[path] is None, media_times[path] or datetime.time.min))
 
         quantity = len(media)
         names = filenamer_service.generate(
