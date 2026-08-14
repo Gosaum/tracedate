@@ -78,7 +78,7 @@ if __name__ == "__main__":
         '1': GenerationMode.Paddedint,
         '2': GenerationMode.Parensint,
         '3': GenerationMode.Hexstring, }
-    current_identifier =identifiers['1']
+    current_identifier =identifiers['3']
 
     while True:
         print(
