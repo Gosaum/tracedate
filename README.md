@@ -1,6 +1,6 @@
 # Tracedate
 
-Tracedate aims to helps the user rename their media files based on their creation date. A media file is defined here as essentially any digital file that contains a photo or a video. The timestamp is extracted from the file, either from the EXIF metadata or the filename, and the media file is renamed based on it. Say goodbye to cryptic names and organize camera and mic files in chronological order.
+Tracedate aims to help users rename their media files based on their creation date. A media file is defined here as essentially any digital file that contains a photo or a video. The timestamp is extracted from the file, either from the EXIF metadata or the filename, and the media file is renamed based on it. Say goodbye to cryptic names and organize camera files in chronological order.
 
 ## Running the script with Docker
 
@@ -17,7 +17,8 @@ Tracedate aims to helps the user rename their media files based on their creatio
 2. **Run the container:**
    ```bash
    docker run --rm -it -v <target_directory_path>:/data tracedate /data
-
+   ```
+   
 ## Running the script locally with Python
 
 ### Prerequisites
@@ -28,7 +29,9 @@ Tracedate aims to helps the user rename their media files based on their creatio
    Open your terminal at the root and install the required packages:
    ```bash
    pip install -r requirements.txt
-
+   ```
+   
 2. **Run the script:**
    ```bash
    python main.py <target_directory_path>
+   ```
