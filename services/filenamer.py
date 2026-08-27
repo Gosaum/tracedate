@@ -42,6 +42,6 @@ class FileNamer:
 
         new_filename = f"{new_name}{os.path.splitext(file_path)[1]}"
         new_file_path = os.path.join(dir_path, new_filename)
-
-        if new_filename != file_path:
+        
+        if file_path != new_file_path and not os.path.exists(new_file_path):
             os.rename(file_path, new_file_path)
